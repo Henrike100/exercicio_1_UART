@@ -32,7 +32,7 @@ void leitura(char codigo) {
         return;
     }
 
-    sleep(5);
+    sleep(1);
 
     int num_int;
     float num_float;
@@ -46,10 +46,10 @@ void leitura(char codigo) {
 
     switch (codigo) {
     case 0xA1:
-        count = read(uart0_filestream, (void*)num_int, 4);
+        count = read(uart0_filestream, &num_int, 4);
         break;
     case 0xA2:
-        count = read(uart0_filestream, (void*)((int)num_float), 4);
+        count = read(uart0_filestream, &num_float, 4);
         break;
     case 0xA3:
         count = read(uart0_filestream, (void*)str, 256);
