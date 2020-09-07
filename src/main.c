@@ -112,23 +112,19 @@ void escrita(char codigo, int num_int, float num_float, char str[]) {
 
     int count;
 
-    printf("(1)\n");
-
     switch (codigo) {
     case 0xB1:
         msg_number[0] = codigo;
-        memcpy(&str[1], &num_int, 4);
-        printf("(2)\n");
+        memcpy(&msg_number[1], &num_int, 4);
         msg_number[5] = 0;
         msg_number[6] = 3;
         msg_number[7] = 9;
         msg_number[8] = 4;
         count = write(uart0_filestream, &msg_number[0], 9);
-        printf("(3)\n");
         break;
     case 0xB2:
         msg_number[0] = codigo;
-        memcpy(&str[1], &num_float, 4);
+        memcpy(&msg_number[1], &num_float, 4);
         msg_number[5] = 0;
         msg_number[6] = 3;
         msg_number[7] = 9;
