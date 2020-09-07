@@ -32,7 +32,7 @@ void leitura(char codigo) {
         return;
     }
 
-    sleep(1);
+    sleep(5);
 
     int num_int;
     float num_float;
