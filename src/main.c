@@ -104,7 +104,7 @@ void escrita(char codigo, int num_int, float num_float, char str[]) {
     tcsetattr(uart0_filestream, TCSANOW, &options);
 
     // comando + dado + matricula = 1 + 4 + 4 = 9
-    char msg_number[9];
+    char msg_number[15];
 
     // comando + size + string + matricula = 1 + 1 + 255 + 4
     char msg_string[261];
